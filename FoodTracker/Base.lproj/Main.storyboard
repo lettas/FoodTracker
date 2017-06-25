@@ -54,6 +54,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="bbL-mb-nP0" secondAttribute="trailing" id="tSa-sI-pGQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="DdS-X9-zKf" id="2xw-wN-aaa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
