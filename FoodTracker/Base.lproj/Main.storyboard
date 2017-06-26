@@ -47,9 +47,13 @@
                                     </button>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ZC0-hS-D6a">
                                         <rect key="frame" x="0.0" y="104.5" width="343" height="343"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ZC0-hS-D6a" secondAttribute="height" multiplier="1:1" id="zM0-Hw-BXO"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="O24-rQ-NeT" appends="YES" id="idZ-6N-DWq"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -71,6 +75,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="O24-rQ-NeT"/>
             </objects>
             <point key="canvasLocation" x="-98.400000000000006" y="123.68815592203899"/>
         </scene>
