@@ -30,6 +30,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         mealNameLabel.text = textField.text
     }
 
+    // MARK: UIImagePickerControllerDelegate
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+
     // MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         // キーボードを隠す
