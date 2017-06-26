@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bbL-mb-nP0">
-                                <rect key="frame" x="16" y="40" width="343" height="232.5"/>
+                                <rect key="frame" x="16" y="40" width="343" height="424.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0TF-la-2IL">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
@@ -45,7 +45,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZC0-hS-D6a">
-                                        <rect key="frame" x="0.0" y="104.5" width="240" height="128"/>
+                                        <rect key="frame" x="0.0" y="104.5" width="320" height="320"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
