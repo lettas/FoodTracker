@@ -32,6 +32,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
 
     // MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+        // キーボードを隠す
+        nameTextField.resignFirstResponder()
+
+        // イメージピッカーを表示する
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
     }
 
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
