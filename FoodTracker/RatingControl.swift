@@ -19,4 +19,20 @@ class RatingControl: UIStackView {
     required init(coder: NSCoder) {
         super.init(coder: coder)
     }
+
+    // MARK: Private Methods
+
+    private func setupButtons() {
+        // ボタンを作る
+        let button = UIButton()
+        button.backgroundColor = UIColor.red
+
+        // レイアウト制約を設定
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+
+        // Viewに追加
+        addArrangedSubview(button)
+    }
 }
