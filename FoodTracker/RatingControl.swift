@@ -30,20 +30,24 @@ class RatingControl: UIStackView {
     // MARK: Private Methods
 
     private func setupButtons() {
-        // ボタンを作る
-        let button = UIButton()
-        button.backgroundColor = UIColor.red
+        for _ in 0..<5 {
+            // ボタンを作る
+            let button = UIButton()
+            button.backgroundColor = UIColor.red
 
-        // レイアウト制約を設定
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+            // レイアウト制約を設定
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+            button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
 
-        // ボタンのアクションを設定
-        button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
+            // ボタンのアクションを設定
+            button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
 
-        // Viewに追加
-        addArrangedSubview(button)
+            // Viewに追加
+            addArrangedSubview(button)
+
+            ratingButtons.append(button)
+        }
     }
 
     // MARK: Button Action
