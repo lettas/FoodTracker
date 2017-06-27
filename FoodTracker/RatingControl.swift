@@ -78,6 +78,22 @@ import UIKit
             // アクセシビリティ設定
             button.accessibilityLabel = "Set \(index + 1) star rating"
 
+            // ボタンのアクションを設定
+            button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
+
+            // Viewに追加
+            addArrangedSubview(button)
+
+            ratingButtons.append(button)
+        }
+
+        updateButtonSelectionStates()
+    }
+
+    private func updateButtonSelectionStates() {
+        for (index, button) in ratingButtons.enumerated() {
+            button.isSelected = index < rating
+
             let hintString: String?
             if rating == index + 1 {
                 hintString = "Tap to reset the rating to zero."
@@ -98,23 +114,6 @@ import UIKit
 
             button.accessibilityHint = hintString
             button.accessibilityValue = valueString
-
-
-            // ボタンのアクションを設定
-            button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
-
-            // Viewに追加
-            addArrangedSubview(button)
-
-            ratingButtons.append(button)
-        }
-
-        updateButtonSelectionStates()
-    }
-
-    private func updateButtonSelectionStates() {
-        for (index, button) in ratingButtons.enumerated() {
-            button.isSelected = index < rating
         }
     }
 
