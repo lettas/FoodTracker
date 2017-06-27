@@ -49,10 +49,21 @@ import UIKit
         }
         ratingButtons.removeAll()
 
+        // ボタンの画像を読み込む
+        let bundle = Bundle(for: type(of: self))
+        let emptyStar = UIImage(named: "emptyStar", in: bundle, compatibleWith: self.traitCollection)
+        let filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith: self.traitCollection)
+        let highlightedStar = UIImage(named: "highlightedStar", in: bundle, compatibleWith: self.traitCollection)
+
         for _ in 0..<starCount {
             // ボタンを作る
             let button = UIButton()
-            button.backgroundColor = UIColor.red
+
+            // ボタンに画像を設定
+            button.setImage(emptyStar, for: .normal)
+            button.setImage(filledStar, for: .selected)
+            button.setImage(highlightedStar, for: .highlighted)
+            button.setImage(highlightedStar, for: [.highlighted, .selected])
 
             // レイアウト制約を設定
             button.translatesAutoresizingMaskIntoConstraints = false
