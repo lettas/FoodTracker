@@ -83,6 +83,17 @@ import UIKit
     // MARK: Button Action
 
     func ratingButtonTapped(button: UIButton) {
-        print("Button pressed 👍")
+        guard let index = ratingButtons.index(of: button) else {
+            fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")
+        }
+
+        let selectedRating = index + 1
+        if selectedRating == rating {
+            // 設定してあるratingと同じratingをタップしたらリセットする
+            rating = 0
+        }
+        else {
+            rating = selectedRating
+        }
     }
 }
