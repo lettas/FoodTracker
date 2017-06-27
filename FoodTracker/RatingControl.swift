@@ -25,7 +25,12 @@ import UIKit
     }
 
     private var ratingButtons = [UIButton]()
-    var rating = 0
+
+    var rating = 0 {
+        didSet {
+            updateButtonSelectionStates()
+        }
+    }
 
     // MARK: Initialization
 
@@ -77,6 +82,14 @@ import UIKit
             addArrangedSubview(button)
 
             ratingButtons.append(button)
+        }
+
+        updateButtonSelectionStates()
+    }
+
+    private func updateButtonSelectionStates() {
+        for (index, button) in ratingButtons.enumerated() {
+            button.isSelected = index < rating
         }
     }
 
