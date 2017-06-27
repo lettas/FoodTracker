@@ -34,7 +34,16 @@ class RatingControl: UIStackView {
         button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
         button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
 
+        // ボタンのアクションを設定
+        button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
+
         // Viewに追加
         addArrangedSubview(button)
+    }
+
+    // MARK: Button Action
+
+    func ratingButtonTapped(button: UIButton) {
+        print("Button pressed 👍")
     }
 }
