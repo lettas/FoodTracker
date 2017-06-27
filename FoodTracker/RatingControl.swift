@@ -12,8 +12,17 @@ import UIKit
 
     // MARK: Properties
 
-    @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0)
-    @IBInspectable var starCount: Int = 5
+    @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
+        didSet {
+            setupButtons()
+        }
+    }
+
+    @IBInspectable var starCount: Int = 5 {
+        didSet {
+            setupButtons()
+        }
+    }
 
     private var ratingButtons = [UIButton]()
     var rating = 0
@@ -33,6 +42,13 @@ import UIKit
     // MARK: Private Methods
 
     private func setupButtons() {
+        // 既存のボタンを消す
+        for button in ratingButtons {
+            removeArrangedSubview(button)
+            button.removeFromSuperview()
+        }
+        ratingButtons.removeAll()
+
         for _ in 0..<starCount {
             // ボタンを作る
             let button = UIButton()
