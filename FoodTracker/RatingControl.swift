@@ -14,10 +14,12 @@ class RatingControl: UIStackView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupButtons()
     }
 
     required init(coder: NSCoder) {
         super.init(coder: coder)
+        setupButtons()
     }
 
     // MARK: Private Methods
