@@ -12,6 +12,9 @@ import UIKit
 
     // MARK: Properties
 
+    @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0)
+    @IBInspectable var starCount: Int = 5
+
     private var ratingButtons = [UIButton]()
     var rating = 0
 
@@ -30,15 +33,15 @@ import UIKit
     // MARK: Private Methods
 
     private func setupButtons() {
-        for _ in 0..<5 {
+        for _ in 0..<starCount {
             // ボタンを作る
             let button = UIButton()
             button.backgroundColor = UIColor.red
 
             // レイアウト制約を設定
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
-            button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+            button.heightAnchor.constraint(equalToConstant: starSize.height).isActive = true
+            button.widthAnchor.constraint(equalToConstant: starSize.width).isActive = true
 
             // ボタンのアクションを設定
             button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
