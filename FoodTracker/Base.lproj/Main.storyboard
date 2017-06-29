@@ -115,7 +115,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="bbL-mb-nP0" secondAttribute="trailing" id="tSa-sI-pGQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="New Meal" id="iTO-7z-Lin"/>
+                    <navigationItem key="navigationItem" title="New Meal" id="iTO-7z-Lin">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="q26-0T-Y6X"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nNm-Mv-aXb"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="DdS-X9-zKf" id="2xw-wN-aaa"/>
                         <outlet property="photoImageView" destination="ZC0-hS-D6a" id="3Ld-6I-iZe"/>
