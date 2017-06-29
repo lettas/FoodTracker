@@ -57,7 +57,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Meals" id="Uh2-XW-E5b">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="mFH-jR-RjB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mFH-jR-RjB"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XyY-t1-N12" userLabel="First Responder" sceneMemberID="firstResponder"/>
