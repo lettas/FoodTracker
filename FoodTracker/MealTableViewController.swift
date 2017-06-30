@@ -18,7 +18,13 @@ class MealTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem
-        loadSampleMeals()
+
+        if let savedMeals = loadMeals() {
+            meals += savedMeals
+        }
+        else {
+            loadSampleMeals()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +73,7 @@ class MealTableViewController: UITableViewController {
                 meals.append(meal)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            saveMeals()
         }
     }
 
@@ -99,6 +106,7 @@ class MealTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             meals.remove(at: indexPath.row)
+            saveMeals()
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
         else if editingStyle == .insert {
