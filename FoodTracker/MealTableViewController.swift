@@ -96,6 +96,16 @@ class MealTableViewController: UITableViewController {
         }
     }
 
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            meals.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        else if editingStyle == .insert {
+            // 何もしないんですけどね
+        }
+    }
+
     // MARK: Private Methods
 
     private func loadSampleMeals() {
