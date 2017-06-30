@@ -12,6 +12,12 @@ class Meal {
 
     // MARK: Properties
 
+    struct PropertyKeys {
+        static let name = "name"
+        static let photo = "photo"
+        static let rating = "rating"
+    }
+
     var name: String
     var photo: UIImage?
     var rating: Int
