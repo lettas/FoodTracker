@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import os.log
 
-class Meal {
+class Meal: NSObject, NSCoding {
 
     // MARK: Properties
 
@@ -36,5 +37,25 @@ class Meal {
         self.name = name
         self.photo = photo
         self.rating = rating
+    }
+
+    // MARK: NSCoding
+
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: PropertyKeys.name)
+        aCoder.encode(photo, forKey: PropertyKeys.photo)
+        aCoder.encode(rating, forKey: PropertyKeys.rating)
+    }
+
+    required convenience init?(coder aDecoder: NSCoder) {
+        guard let name = aDecoder.decodeObject(forKey: PropertyKeys.name) as? String else {
+            os_log("Unable to decode the name for a Meal object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+
+        let photo = aDecoder.decodeObject(forKey: PropertyKeys.photo) as? UIImage
+        let rating = aDecoder.decodeInteger(forKey: PropertyKeys.rating)
+
+        self.init(name: name, photo: photo, rating:rating)
     }
 }
